@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+    <properties resource="config.properties">
+        <!--首先读取properties元素体内指定的属性-->
+        <!--然后根据properties元素中的resource属性读取类路径下属性文件
+        或根据url属性指定的路径读取属性文件，并覆盖已读取的同名属性-->
+        <!--最后读取作为方法参数传递的属性，并覆盖已读取的同名属性-->
+        <!--<property name="username" value="root"/>-->
+        <!--<property name="password" value="3896"/>-->
+    </properties>
     <!--为JavaBean起类别名-->
     <typeAliases>
         <!--指定一个包名起别名,将包内的Java类名作为类的类别名-->
@@ -11,10 +19,10 @@
             <!--直接使用JDBC的提交和回滚设置-->
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED"> <!--直接JDBC数据源-->
-                <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="username" value="root"/>
-                <property name="password" value="3896"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/mybatis"/>
+                <property name="driver" value="${driver}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+                <property name="url" value="${url}"/>
             </dataSource>
         </environment>
     </environments>
