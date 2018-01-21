@@ -957,95 +957,139 @@
     <table id="244" parent="10" name="tb_head_teacher">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="245" parent="10" name="user">
+    <table id="245" parent="10" name="tb_student">
       <Engine>InnoDB</Engine>
     </table>
-    <column id="246" parent="243" name="c_id">
+    <table id="246" parent="10" name="user">
+      <Engine>InnoDB</Engine>
+    </table>
+    <column id="247" parent="243" name="c_id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="247" parent="243" name="c_name">
+    <column id="248" parent="243" name="c_name">
       <Position>2</Position>
       <DataType>varchar(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="248" parent="243" name="c_ht_id">
+    <column id="249" parent="243" name="c_ht_id">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="249" parent="243" name="c_ht_id">
+    <index id="250" parent="243" name="c_ht_id">
       <ColNames>c_ht_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="250" parent="243" name="PRIMARY">
+    <key id="251" parent="243" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>c_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="251" parent="243" name="c_ht_id">
+    <key id="252" parent="243" name="c_ht_id">
       <ColNames>c_ht_id</ColNames>
       <UnderlyingIndexName>c_ht_id</UnderlyingIndexName>
     </key>
-    <foreign-key id="252" parent="243" name="tb_class_ibfk_1">
+    <foreign-key id="253" parent="243" name="tb_class_ibfk_1">
       <ColNames>c_ht_id</ColNames>
       <RefSchemaName>mybatis</RefSchemaName>
       <RefTableName>tb_head_teacher</RefTableName>
       <RefColNames>ht_id</RefColNames>
     </foreign-key>
-    <column id="253" parent="244" name="ht_id">
+    <column id="254" parent="244" name="ht_id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="254" parent="244" name="ht_name">
+    <column id="255" parent="244" name="ht_name">
       <Position>2</Position>
       <DataType>varchar(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="255" parent="244" name="ht_age">
+    <column id="256" parent="244" name="ht_age">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="256" parent="244" name="PRIMARY">
+    <key id="257" parent="244" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ht_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="257" parent="245" name="id">
+    <column id="258" parent="245" name="s_id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="258" parent="245" name="username">
+    <column id="259" parent="245" name="s_name">
       <Position>2</Position>
       <DataType>varchar(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="259" parent="245" name="password">
+    <column id="260" parent="245" name="s_sex">
+      <Position>3</Position>
+      <DataType>varchar(10)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="261" parent="245" name="s_age">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="262" parent="245" name="s_c_id">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="263" parent="245" name="s_c_id">
+      <ColNames>s_c_id</ColNames>
+    </index>
+    <key id="264" parent="245" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>s_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="265" parent="245" name="tb_student_ibfk_1">
+      <ColNames>s_c_id</ColNames>
+      <RefSchemaName>mybatis</RefSchemaName>
+      <RefTableName>tb_class</RefTableName>
+      <RefColNames>c_id</RefColNames>
+    </foreign-key>
+    <column id="266" parent="246" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="267" parent="246" name="username">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="268" parent="246" name="password">
       <Position>3</Position>
       <DataType>varchar(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="260" parent="245" name="sex">
+    <column id="269" parent="246" name="sex">
       <Position>4</Position>
       <DataType>varchar(10)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="261" parent="245" name="address">
+    <column id="270" parent="246" name="address">
       <Position>5</Position>
       <DataType>varchar(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="262" parent="245" name="PRIMARY">
+    <key id="271" parent="246" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

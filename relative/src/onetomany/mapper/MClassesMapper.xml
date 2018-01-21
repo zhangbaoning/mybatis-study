@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="onetomany.mapper.MClassesMapper">
+    <select id="selectClassAndStudentById" resultMap="classesmap" parameterType="int">
+        SELECT * FROM tb_student s,tb_class c WHERE s.s_c_id = c.c_id
+        AND c.c_id = #{id}
+    </select>
+    <resultMap id="classesmap" type="MClasses">
+        <id property="id" column="c_id" javaType="int"/>
+        <result property="name" column="c_name" javaType="String"/>
+        <collection property="students" ofType="Student">
+            <id property="id" column="s_id"/>
+            <result property="name" column="s_name"/>
+            <result property="sex" column="s_sex"/>
+            <result property="age" column="s_age"/>
+        </collection>
+
+    </resultMap>
+</mapper>

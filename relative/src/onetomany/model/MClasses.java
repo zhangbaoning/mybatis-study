@@ -1,17 +1,20 @@
-package onetoone.model;
+package onetomany.model;
 
-public class Classes {
+import java.util.List;
+
+public class MClasses {
     private Integer id;
     private String name;
-    private HeadTeacher teacher;
+    private List<Student> students;
 
-    public Classes() {
+    public MClasses() {
     }
 
-    public Classes(Integer id, String name, HeadTeacher teacher) {
+    public MClasses(Integer id, String name, List<Student> students) {
+
         this.id = id;
         this.name = name;
-        this.teacher = teacher;
+        this.students = students;
     }
 
     public Integer getId() {
@@ -30,8 +33,12 @@ public class Classes {
         this.name = name;
     }
 
-    public HeadTeacher getTeacher() {
-        return teacher;
+    public List<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(List<Student> students) {
+        this.students = students;
     }
 
     @Override
@@ -39,12 +46,7 @@ public class Classes {
         return "MClasses{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", teacher=" + teacher +
+                ", students=" + students +
                 '}';
-    }
-
-    public void setTeacher(HeadTeacher teacher) {
-
-        this.teacher = teacher;
     }
 }
